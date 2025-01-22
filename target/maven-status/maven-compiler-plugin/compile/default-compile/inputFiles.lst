@@ -1,0 +1,7 @@
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/BusRideBookingApplication.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/controller/UserController.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/model/User.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/model/UserRole.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/repository/UserRepository.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/service/UserService.java
+/home/ptspl11/project/bus-ride-booking-apis/src/main/java/com/pinnacle/bus/userapi/UserApiApplication.java
