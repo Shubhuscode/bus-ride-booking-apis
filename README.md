@@ -15,7 +15,7 @@ MySQL/PostgreSQL/MongoDB (or any other database used)
 ##  Setting Up the Project
 Clone the Repository
 ```bash 
-git clone (https://github.com/Shubhuscode/bus-ride-booking-apis.git)
+git clone https://github.com/Shubhuscode/bus-ride-booking-apis.git
 cd bus-ride-booking-apis
 ```
 
