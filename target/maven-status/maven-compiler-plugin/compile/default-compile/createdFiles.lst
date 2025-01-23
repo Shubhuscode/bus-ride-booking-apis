@@ -1,7 +1,0 @@
-com/pinnacle/bus/model/UserRole.class
-com/pinnacle/bus/repository/UserRepository.class
-com/pinnacle/bus/userapi/UserApiApplication.class
-com/pinnacle/bus/service/UserService.class
-com/pinnacle/bus/controller/UserController.class
-com/pinnacle/bus/BusRideBookingApplication.class
-com/pinnacle/bus/model/User.class
