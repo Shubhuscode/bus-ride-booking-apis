@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "908819b2-d720-47a7-93b6-5e04908283fa",
+		"name": "Bus Ride Booking Java Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40713425"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "User List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"user123\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"emailVerified\": \"2025-01-21T10:00:00\",\n  \"image\": \"https://example.com/images/john.jpg\",\n  \"role\": \"USER\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"user123\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"emailVerified\": \"2025-01-21T10:00:00\",\n  \"image\": \"https://example.com/images/john.jpg\",\n  \"role\": \"USER\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users/2"
+					},
+					"response": []
+				},
+				{
+					"name": "User Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"user123\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"emailVerified\": \"2025-01-21T10:00:00\",\n  \"image\": \"https://example.com/images/john.jpg\",\n  \"role\": \"USER\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
