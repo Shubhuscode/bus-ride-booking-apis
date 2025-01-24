@@ -3,15 +3,12 @@ package com.pinnacle.bus.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 @Entity
 @Table(name = "users")
-@Document
-public class User {
+public class UserMySQL {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String name;
 
@@ -30,11 +27,12 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.USER;
 
-    public String getId() {
+    // Getters and setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -94,4 +92,3 @@ public class User {
         this.role = role;
     }
 }
-

@@ -1,19 +1,19 @@
 package com.pinnacle.bus.controller;
 
-
 import com.pinnacle.bus.model.User;
 import com.pinnacle.bus.service.UserService;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;
 
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -27,21 +27,19 @@ public class UserController {
     public User getUserById(@PathVariable String id) {
         return userService.getUserById(id);
     }
-
+    
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable String id, @RequestBody User userDetails) {
-        return userService.updateUser(id, userDetails);
+    public User updateUser(@PathVariable String id, @RequestBody User user) {
+        return userService.updateUser(id, user);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable String id) {
+    public void deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
-        return ResponseEntity.ok().build();
-    }
+    }    
 }
-

@@ -3,38 +3,53 @@ package com.pinnacle.bus.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 @Entity
 @Table(name = "users")
-@Document
-public class User {
+public class UserPostgres {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
+    @Column(nullable = false)
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
+    @Column(name = "email_verified")
     private LocalDateTime emailVerified;
+
     private String image;
 
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @Column(name = "created_at", updatable = false, nullable = false)
+    private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt = LocalDateTime.now();
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private UserRole role = UserRole.USER;
 
-    public String getId() {
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    // Getters and Setters
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -94,4 +109,3 @@ public class User {
         this.role = role;
     }
 }
-

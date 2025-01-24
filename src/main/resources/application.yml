@@ -1,0 +1,44 @@
+# General Profile Activation
+spring:
+  profiles:
+    active: jpa # Change to `postgres` or `mongo` as needed.
+
+# MySQL Configuration
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_db
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# PostgreSQL Configuration
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_db_test
+    username: postgres
+    password: ptspl123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# MongoDB Configuration
+---
+spring:
+  config:
+    activate:
+      on-profile: mongo
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/user_db

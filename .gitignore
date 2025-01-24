@@ -1,0 +1,45 @@
+# Compiled source
+target/
+
+# Log files
+*.log
+*.out
+*.err
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# IDE-specific files
+/.idea/
+/*.iml
+*.classpath
+*.project
+*.settings/
+/.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Maven-specific files
+.mvn/
+dependency-reduced-pom.xml
+
+# Gradle-specific files
+.gradle/
+/build/
+
+# Spring Boot devtools
+.spring-boot-devtools.properties
+
+# Docker-specific files
+*.env
+*.history
+**/Dockerfile
+**/docker-compose.*
+
+# Application-specific files
+application-*.yml
+application-*.properties
