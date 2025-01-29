@@ -33,6 +33,14 @@ public class LocationController {
         return locationService.getLocationById(id);
     }
 
+     // Update location by ID
+     @PutMapping("/{id}")
+     public Location updateLocation(@PathVariable Long id, @RequestBody Location location) {
+         // Assuming you have a method in LocationService to update the location
+         return locationService.updateLocation(id, location);
+     }
+ 
+
     // Delete location by ID
     @DeleteMapping("/{id}")
     public void deleteLocation(@PathVariable Long id) {

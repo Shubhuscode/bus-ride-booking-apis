@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VehicleMongoRepository extends MongoRepository<Vehicle, String> {
-    // You can add custom queries here if necessary
+   
 }

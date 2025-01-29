@@ -24,19 +24,19 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        return userPostgreSQLRepository.save(user);  // Save only in PostgreSQL
+        return userPostgreSQLRepository.save(user);  
     }
 
     public User updateUser(String id, User userDetails) {
-        User user = getUserById(id);  // Fetch user from PostgreSQL
+        User user = getUserById(id);  
         user.setName(userDetails.getName());
         user.setEmail(userDetails.getEmail());
         user.setUpdatedAt(userDetails.getUpdatedAt());
-        return userPostgreSQLRepository.save(user);  // Save only in PostgreSQL
+        return userPostgreSQLRepository.save(user);  
     }
 
     public void deleteUser(String id) {
-        userPostgreSQLRepository.deleteById(id);  // Delete only from PostgreSQL
+        userPostgreSQLRepository.deleteById(id);  
     }
 
     public List<User> getAllUsers() {

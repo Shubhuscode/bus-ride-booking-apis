@@ -18,24 +18,46 @@ public class VehicleService {
         this.vehicleMongoRepository = vehicleMongoRepository;
     }
 
-    // Create or Update a Vehicle
+    
     public Vehicle saveVehicle(Vehicle vehicle) {
         return vehicleMongoRepository.save(vehicle);
     }
 
-    // Get all Vehicles
+   
     public List<Vehicle> getAllVehicles() {
         return vehicleMongoRepository.findAll();
     }
 
-    // Get a Vehicle by ID
+   
     public Vehicle getVehicleById(String id) {
         return vehicleMongoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Vehicle not found with id " + id));
     }
 
-    // Delete a Vehicle by ID
+   
     public void deleteVehicle(String id) {
         vehicleMongoRepository.deleteById(id);
     }
+
+    
+    public Vehicle updateVehicle(String id, Vehicle vehicle) {
+       
+        Optional<Vehicle> existingVehicleOpt = vehicleMongoRepository.findById(id);
+        
+        if (existingVehicleOpt.isPresent()) {
+            Vehicle existingVehicle = existingVehicleOpt.get();
+           
+            existingVehicle.setName(vehicle.getName());
+            existingVehicle.setType(vehicle.getType());
+            existingVehicle.setManufacturer(vehicle.getManufacturer());
+            existingVehicle.setLicensePlate(vehicle.getLicensePlate());
+            existingVehicle.setCapacity(vehicle.getCapacity());
+            
+            return vehicleMongoRepository.save(existingVehicle);
+        } else {
+            throw new RuntimeException("Vehicle not found with id " + id);
+        }
+}
+
+    
 }

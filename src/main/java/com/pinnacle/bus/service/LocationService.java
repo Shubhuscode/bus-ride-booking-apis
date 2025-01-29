@@ -33,4 +33,23 @@ public class LocationService {
     public void deleteLocation(Long id) {
         locationRepository.deleteById(id);
     }
+
+      // Update location by ID
+      public Location updateLocation(Long id, Location location) {
+        // Check if the location exists
+        Optional<Location> existingLocationOpt = locationRepository.findById(id);
+        
+        if (existingLocationOpt.isPresent()) {
+            Location existingLocation = existingLocationOpt.get();
+            // Update the fields you want to modify
+            existingLocation.setName(location.getName()); // Update name
+            existingLocation.setAddress(location.getAddress()); // Update address
+            // Update other fields as needed...
+            
+            // Save the updated location and return it
+            return locationRepository.save(existingLocation);
+        } else {
+            throw new RuntimeException("Location not found with id " + id);
+        }
+    }
 }
